@@ -14,7 +14,9 @@ mongoose.connect('mongodb://'+process.env.DB_USER+':'+process.env.DB_PASSWORD+'@
  promiseLibrary: global.Promise 
 });
 
+
 app.use(morgan('dev'));
+app.use('/uploads', express.static('uploads'));
 app.use(boadyParser.urlencoded({
  extended: false
 }));
